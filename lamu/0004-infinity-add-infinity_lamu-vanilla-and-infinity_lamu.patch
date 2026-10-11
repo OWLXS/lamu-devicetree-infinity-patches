@@ -1,0 +1,94 @@
+From 6ff86dbb6f6fa42610e37de0b04bc9d374b1f0c5 Mon Sep 17 00:00:00 2001
+From: vigaz <pudimdebacon3@gmail.com>
+Date: Sat, 10 Oct 2026 22:18:56 -0300
+Subject: [PATCH 4/5] infinity: add infinity_lamu (vanilla) and
+ infinity_lamu_gapps product flavors
+
+---
+ infinity_lamu.mk       | 34 ++++++++++++++++++++++++++++++++++
+ infinity_lamu_gapps.mk | 32 ++++++++++++++++++++++++++++++++
+ 2 files changed, 66 insertions(+)
+ create mode 100644 infinity_lamu.mk
+ create mode 100644 infinity_lamu_gapps.mk
+
+diff --git a/infinity_lamu.mk b/infinity_lamu.mk
+new file mode 100644
+index 0000000..fb27c55
+--- /dev/null
++++ b/infinity_lamu.mk
+@@ -0,0 +1,34 @@
++#
++# SPDX-FileCopyrightText: The LineageOS Project
++# SPDX-License-Identifier: Apache-2.0
++#
++
++# Inherit from those products. Most specific first.
++$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
++$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
++
++# Inherit from device makefile.
++$(call inherit-product, device/motorola/lamu/device.mk)
++
++# Inherit common ProjectInfinity-X stuff (vendor/lineage/config/common_full_phone.mk
++# equivalent -- Infinity-X keeps its own fork under vendor/infinity).
++# Vanilla first build -- user wants to flash MindTheGapps separately later,
++# not bake it in now. Must be set BEFORE the inherit-product call below --
++# WITH_GAPPS is read via ifeq() inside common.mk at include-time, not a
++# value merged in afterward (same inherit-product ordering gotcha already
++# hit once with WITH_GMS on this device tree).
++WITH_GAPPS := false
++
++$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
++
++PRODUCT_NAME := infinity_lamu
++PRODUCT_DEVICE := lamu
++PRODUCT_MANUFACTURER := motorola
++PRODUCT_BRAND := motorola
++
++# PRODUCT_MODEL, refresh-rate config, PRODUCT_BUILD_PROP_OVERRIDES and
++# PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS all live in device.mk now
++# (inherited above) -- hardware/OEM facts, not ROM-specific, so they don't
++# belong duplicated in this product flavor file.
++
++INFINITY_MAINTAINER := The Moon’X
+diff --git a/infinity_lamu_gapps.mk b/infinity_lamu_gapps.mk
+new file mode 100644
+index 0000000..47357e9
+--- /dev/null
++++ b/infinity_lamu_gapps.mk
+@@ -0,0 +1,32 @@
++#
++# SPDX-FileCopyrightText: The LineageOS Project
++# SPDX-License-Identifier: Apache-2.0
++#
++
++# Inherit from those products. Most specific first.
++$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
++$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
++
++# Inherit from device makefile.
++$(call inherit-product, device/motorola/lamu/device.mk)
++
++# Inherit common ProjectInfinity-X stuff (vendor/lineage/config/common_full_phone.mk
++# equivalent -- Infinity-X keeps its own fork under vendor/infinity).
++# GApps-baked-in flavor -- sibling of infinity_lamu (vanilla). Stays on the
++# default erofs everywhere (BoardConfigCommon.mk) since nothing needs a
++# post-boot rw flash here; WITH_GAPPS=true is baked at build time instead.
++WITH_GAPPS := true
++
++$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
++
++PRODUCT_NAME := infinity_lamu_gapps
++PRODUCT_DEVICE := lamu
++PRODUCT_MANUFACTURER := motorola
++PRODUCT_BRAND := motorola
++
++# PRODUCT_MODEL, refresh-rate config, PRODUCT_BUILD_PROP_OVERRIDES and
++# PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS all live in device.mk now
++# (inherited above) -- hardware/OEM facts, not ROM-specific, so they don't
++# belong duplicated in this product flavor file.
++
++INFINITY_MAINTAINER := The Moon’X
+-- 
+2.56.0
+

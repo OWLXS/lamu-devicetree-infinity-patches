@@ -1,0 +1,25 @@
+From ba3a63d799663e5e554642fe879907e72bbb32d7 Mon Sep 17 00:00:00 2001
+From: vigaz <pudimdebacon3@gmail.com>
+Date: Sat, 10 Oct 2026 22:18:56 -0300
+Subject: [PATCH 1/5] infinity: wire infinity_lamu + infinity_lamu_gapps into
+ AndroidProducts.mk
+
+---
+ AndroidProducts.mk | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/AndroidProducts.mk b/AndroidProducts.mk
+index f40ac6f..85372b7 100644
+--- a/AndroidProducts.mk
++++ b/AndroidProducts.mk
+@@ -4,4 +4,6 @@
+ #
+ 
+ PRODUCT_MAKEFILES := \
+-    $(LOCAL_DIR)/lineage_lamu.mk
++    $(LOCAL_DIR)/lineage_lamu.mk \
++    $(LOCAL_DIR)/infinity_lamu.mk \
++    $(LOCAL_DIR)/infinity_lamu_gapps.mk
+-- 
+2.56.0
+
