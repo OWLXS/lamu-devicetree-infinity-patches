@@ -1,6 +1,6 @@
-From 6ff86dbb6f6fa42610e37de0b04bc9d374b1f0c5 Mon Sep 17 00:00:00 2001
+From 045248b52919610b0f9cbfef6042df308def97a4 Mon Sep 17 00:00:00 2001
 From: vigaz <pudimdebacon3@gmail.com>
-Date: Sat, 10 Oct 2026 22:18:56 -0300
+Date: Sat, 10 Oct 2026 22:26:04 -0300
 Subject: [PATCH 4/5] infinity: add infinity_lamu (vanilla) and
  infinity_lamu_gapps product flavors
 

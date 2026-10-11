@@ -1,28 +1,27 @@
-From f11615ff3400681abe6861a0f63152d00e629360 Mon Sep 17 00:00:00 2001
+From 4108dd82dc9082e7ae30df0afd660c758c15f764 Mon Sep 17 00:00:00 2001
 From: vigaz <pudimdebacon3@gmail.com>
-Date: Sat, 10 Oct 2026 22:18:56 -0300
+Date: Sat, 10 Oct 2026 22:26:04 -0300
 Subject: [PATCH 3/5] infinity: import per-SKU About-phone props
  (infinity_sku_<sku>.prop)
 
 ---
- system.prop | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ system.prop | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
 diff --git a/system.prop b/system.prop
-index 0fafab9..ee29975 100644
+index e747f6f..73eba66 100644
 --- a/system.prop
 +++ b/system.prop
-@@ -58,3 +58,12 @@ ro.lmk.relaxed_available_memory=true
- # take effect (not silently fail -- if it did, setSchedAttr() just ALOGWs
- # and moves on, so this is safe to try either way).
- ro.surface_flinger.uclamp.min=135
+@@ -68,3 +68,11 @@ ro.surface_flinger.uclamp.min=135
+ # not the user-facing "About phone" name). ROM-agnostic: any ROM's
+ # Settings reads ro.product.marketname, not just ProjectInfinity-X's.
+ import /system/etc/prop/sku_${ro.boot.hardware.sku}.prop
 +
-+# ProjectInfinity-X "About phone" identity, per-SKU (README-documented convention:
-+# ro.product.marketname / ro.infinity.soc / ro.infinity.camera, in system.prop).
-+# This device tree covers 3 real Motorola SKUs with different specs (G05 single
-+# camera, G15/G15 Power dual camera) via one build -- same pattern already used
-+# by odm.prop/product.prop (import with ${ro.boot.hardware.sku} expansion,
-+# resolved at boot, not build time). Harmless no-op for non-Infinity ROMs: the
++# ProjectInfinity-X "About phone" identity, per-SKU (README-documented
++# convention: ro.infinity.soc / ro.infinity.camera). Separate from the
++# ro.product.marketname import above -- that one is ROM-agnostic
++# (standard AOSP prop), this one is Infinity-X's own namespace, only its
++# own About-phone UI reads it. Harmless no-op for non-Infinity ROMs: the
 +# import just finds nothing if infinity_sku_*.prop was not installed.
 +import /system/etc/prop/infinity_sku_${ro.boot.hardware.sku}.prop
 -- 

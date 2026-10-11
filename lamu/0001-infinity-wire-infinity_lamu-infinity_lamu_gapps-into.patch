@@ -1,4 +1,4 @@
-From ba3a63d799663e5e554642fe879907e72bbb32d7 Mon Sep 17 00:00:00 2001
+From 5fe8c51d0c96f761b45904c9aae218033bc575aa Mon Sep 17 00:00:00 2001
 From: vigaz <pudimdebacon3@gmail.com>
 Date: Sat, 10 Oct 2026 22:18:56 -0300
 Subject: [PATCH 1/5] infinity: wire infinity_lamu + infinity_lamu_gapps into

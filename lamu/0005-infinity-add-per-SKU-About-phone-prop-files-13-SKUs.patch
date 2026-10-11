@@ -1,23 +1,27 @@
-From 6d20e85de3818ea4d1ea0eafacbfee8fc6b28828 Mon Sep 17 00:00:00 2001
+From 8eeffad28a33f040a920cc943c109ff268878eda Mon Sep 17 00:00:00 2001
 From: vigaz <pudimdebacon3@gmail.com>
-Date: Sat, 10 Oct 2026 22:18:56 -0300
+Date: Sat, 10 Oct 2026 22:26:04 -0300
 Subject: [PATCH 5/5] infinity: add per-SKU About-phone prop files (13 SKUs)
 
+Only Infinity-X's own namespace here (ro.infinity.soc/camera, read by
+its own About-phone UI) -- ro.product.marketname moved to the base
+device tree instead (ROM-agnostic, see android_device_motorola_lamu
+commit 241fbb3), this file set used to carry it redundantly.
 ---
- sku/system/infinity_sku_.prop          | 3 +++
- sku/system/infinity_sku_XT2521-2.prop  | 3 +++
- sku/system/infinity_sku_XT2521-3.prop  | 3 +++
- sku/system/infinity_sku_XT2521-4.prop  | 3 +++
- sku/system/infinity_sku_XT2521-5.prop  | 3 +++
- sku/system/infinity_sku_XT2521-6.prop  | 3 +++
- sku/system/infinity_sku_XT2523-10.prop | 3 +++
- sku/system/infinity_sku_XT2523-11.prop | 3 +++
- sku/system/infinity_sku_XT2523-2.prop  | 3 +++
- sku/system/infinity_sku_XT2523-3.prop  | 3 +++
- sku/system/infinity_sku_XT2523-4.prop  | 3 +++
- sku/system/infinity_sku_XT2523-5.prop  | 3 +++
- sku/system/infinity_sku_XT2523-9.prop  | 3 +++
- 13 files changed, 39 insertions(+)
+ sku/system/infinity_sku_.prop          | 2 ++
+ sku/system/infinity_sku_XT2521-2.prop  | 2 ++
+ sku/system/infinity_sku_XT2521-3.prop  | 2 ++
+ sku/system/infinity_sku_XT2521-4.prop  | 2 ++
+ sku/system/infinity_sku_XT2521-5.prop  | 2 ++
+ sku/system/infinity_sku_XT2521-6.prop  | 2 ++
+ sku/system/infinity_sku_XT2523-10.prop | 2 ++
+ sku/system/infinity_sku_XT2523-11.prop | 2 ++
+ sku/system/infinity_sku_XT2523-2.prop  | 2 ++
+ sku/system/infinity_sku_XT2523-3.prop  | 2 ++
+ sku/system/infinity_sku_XT2523-4.prop  | 2 ++
+ sku/system/infinity_sku_XT2523-5.prop  | 2 ++
+ sku/system/infinity_sku_XT2523-9.prop  | 2 ++
+ 13 files changed, 26 insertions(+)
  create mode 100644 sku/system/infinity_sku_.prop
  create mode 100644 sku/system/infinity_sku_XT2521-2.prop
  create mode 100644 sku/system/infinity_sku_XT2521-3.prop
@@ -34,119 +38,106 @@ Subject: [PATCH 5/5] infinity: add per-SKU About-phone prop files (13 SKUs)
 
 diff --git a/sku/system/infinity_sku_.prop b/sku/system/infinity_sku_.prop
 new file mode 100644
-index 0000000..6056b24
+index 0000000..be8ae49
 --- /dev/null
 +++ b/sku/system/infinity_sku_.prop
-@@ -0,0 +1,3 @@
-+ro.product.marketname=Moto G15
+@@ -0,0 +1,2 @@
 +ro.infinity.soc=MediaTek Helio G81 Extreme
 +ro.infinity.camera=50 MP + 5 MP
 diff --git a/sku/system/infinity_sku_XT2521-2.prop b/sku/system/infinity_sku_XT2521-2.prop
 new file mode 100644
-index 0000000..6056b24
+index 0000000..be8ae49
 --- /dev/null
 +++ b/sku/system/infinity_sku_XT2521-2.prop
-@@ -0,0 +1,3 @@
-+ro.product.marketname=Moto G15
+@@ -0,0 +1,2 @@
 +ro.infinity.soc=MediaTek Helio G81 Extreme
 +ro.infinity.camera=50 MP + 5 MP
 diff --git a/sku/system/infinity_sku_XT2521-3.prop b/sku/system/infinity_sku_XT2521-3.prop
 new file mode 100644
-index 0000000..6056b24
+index 0000000..be8ae49
 --- /dev/null
 +++ b/sku/system/infinity_sku_XT2521-3.prop
-@@ -0,0 +1,3 @@
-+ro.product.marketname=Moto G15
+@@ -0,0 +1,2 @@
 +ro.infinity.soc=MediaTek Helio G81 Extreme
 +ro.infinity.camera=50 MP + 5 MP
 diff --git a/sku/system/infinity_sku_XT2521-4.prop b/sku/system/infinity_sku_XT2521-4.prop
 new file mode 100644
-index 0000000..6056b24
+index 0000000..be8ae49
 --- /dev/null
 +++ b/sku/system/infinity_sku_XT2521-4.prop
-@@ -0,0 +1,3 @@
-+ro.product.marketname=Moto G15
+@@ -0,0 +1,2 @@
 +ro.infinity.soc=MediaTek Helio G81 Extreme
 +ro.infinity.camera=50 MP + 5 MP
 diff --git a/sku/system/infinity_sku_XT2521-5.prop b/sku/system/infinity_sku_XT2521-5.prop
 new file mode 100644
-index 0000000..85ce8d7
+index 0000000..be8ae49
 --- /dev/null
 +++ b/sku/system/infinity_sku_XT2521-5.prop
-@@ -0,0 +1,3 @@
-+ro.product.marketname=Moto G15 Power
+@@ -0,0 +1,2 @@
 +ro.infinity.soc=MediaTek Helio G81 Extreme
 +ro.infinity.camera=50 MP + 5 MP
 diff --git a/sku/system/infinity_sku_XT2521-6.prop b/sku/system/infinity_sku_XT2521-6.prop
 new file mode 100644
-index 0000000..85ce8d7
+index 0000000..be8ae49
 --- /dev/null
 +++ b/sku/system/infinity_sku_XT2521-6.prop
-@@ -0,0 +1,3 @@
-+ro.product.marketname=Moto G15 Power
+@@ -0,0 +1,2 @@
 +ro.infinity.soc=MediaTek Helio G81 Extreme
 +ro.infinity.camera=50 MP + 5 MP
 diff --git a/sku/system/infinity_sku_XT2523-10.prop b/sku/system/infinity_sku_XT2523-10.prop
 new file mode 100644
-index 0000000..e5d12c7
+index 0000000..611c275
 --- /dev/null
 +++ b/sku/system/infinity_sku_XT2523-10.prop
-@@ -0,0 +1,3 @@
-+ro.product.marketname=Moto G05
+@@ -0,0 +1,2 @@
 +ro.infinity.soc=MediaTek Helio G81 Extreme
 +ro.infinity.camera=50 MP
 diff --git a/sku/system/infinity_sku_XT2523-11.prop b/sku/system/infinity_sku_XT2523-11.prop
 new file mode 100644
-index 0000000..e5d12c7
+index 0000000..611c275
 --- /dev/null
 +++ b/sku/system/infinity_sku_XT2523-11.prop
-@@ -0,0 +1,3 @@
-+ro.product.marketname=Moto G05
+@@ -0,0 +1,2 @@
 +ro.infinity.soc=MediaTek Helio G81 Extreme
 +ro.infinity.camera=50 MP
 diff --git a/sku/system/infinity_sku_XT2523-2.prop b/sku/system/infinity_sku_XT2523-2.prop
 new file mode 100644
-index 0000000..e5d12c7
+index 0000000..611c275
 --- /dev/null
 +++ b/sku/system/infinity_sku_XT2523-2.prop
-@@ -0,0 +1,3 @@
-+ro.product.marketname=Moto G05
+@@ -0,0 +1,2 @@
 +ro.infinity.soc=MediaTek Helio G81 Extreme
 +ro.infinity.camera=50 MP
 diff --git a/sku/system/infinity_sku_XT2523-3.prop b/sku/system/infinity_sku_XT2523-3.prop
 new file mode 100644
-index 0000000..e5d12c7
+index 0000000..611c275
 --- /dev/null
 +++ b/sku/system/infinity_sku_XT2523-3.prop
-@@ -0,0 +1,3 @@
-+ro.product.marketname=Moto G05
+@@ -0,0 +1,2 @@
 +ro.infinity.soc=MediaTek Helio G81 Extreme
 +ro.infinity.camera=50 MP
 diff --git a/sku/system/infinity_sku_XT2523-4.prop b/sku/system/infinity_sku_XT2523-4.prop
 new file mode 100644
-index 0000000..e5d12c7
+index 0000000..611c275
 --- /dev/null
 +++ b/sku/system/infinity_sku_XT2523-4.prop
-@@ -0,0 +1,3 @@
-+ro.product.marketname=Moto G05
+@@ -0,0 +1,2 @@
 +ro.infinity.soc=MediaTek Helio G81 Extreme
 +ro.infinity.camera=50 MP
 diff --git a/sku/system/infinity_sku_XT2523-5.prop b/sku/system/infinity_sku_XT2523-5.prop
 new file mode 100644
-index 0000000..e5d12c7
+index 0000000..611c275
 --- /dev/null
 +++ b/sku/system/infinity_sku_XT2523-5.prop
-@@ -0,0 +1,3 @@
-+ro.product.marketname=Moto G05
+@@ -0,0 +1,2 @@
 +ro.infinity.soc=MediaTek Helio G81 Extreme
 +ro.infinity.camera=50 MP
 diff --git a/sku/system/infinity_sku_XT2523-9.prop b/sku/system/infinity_sku_XT2523-9.prop
 new file mode 100644
-index 0000000..e5d12c7
+index 0000000..611c275
 --- /dev/null
 +++ b/sku/system/infinity_sku_XT2523-9.prop
-@@ -0,0 +1,3 @@
-+ro.product.marketname=Moto G05
+@@ -0,0 +1,2 @@
 +ro.infinity.soc=MediaTek Helio G81 Extreme
 +ro.infinity.camera=50 MP
 -- 
