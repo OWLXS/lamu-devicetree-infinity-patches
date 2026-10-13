@@ -4,7 +4,7 @@ ProjectInfinity-X-specific device tree patches for `motorola/lamu`, kept out
 of the base device tree repo so it stays clean enough to build any ROM.
 
 Base repo (clean, structural-only):
-- [OWLXS/android_device_motorola_lamu](https://github.com/OWLXS/android_device_motorola_lamu) — apply `lamu/*.patch` on top of commit `241fbb3`
+- [OWLXS/android_device_motorola_lamu](https://github.com/OWLXS/android_device_motorola_lamu) — apply `lamu/*.patch` on top of commit `fffce34`
 
 ## Apply
 
@@ -26,6 +26,10 @@ cd device/motorola/lamu && git am /path/to/lamu-devicetree-infinity-patches/lamu
 - `lamu/0005-*.patch` — `sku/system/infinity_sku_*.prop`: `ro.infinity.soc` + `ro.infinity.camera`
   only (read by Infinity-X's own About-phone UI), per-SKU for all 13 real Motorola SKUs this
   device tree covers (XT2521-\*, XT2523-\*)
+- `lamu/0006-*.patch` / `lamu/0007-*.patch` — pink show-touches pointer dot
+  (`pointer_spot_touch` PNG bitmaps + icon XMLs) for `FrameworkOverlayLamu` and
+  `FrameworkOverlayLamuLite`; cosmetic, Infinity-X builds only. Standalone copy
+  also lives in [OWLXS/lamu-show-touches-pink-dot](https://github.com/OWLXS/lamu-show-touches-pink-dot)
 
 ## Not included (local-only, never committed anywhere)
 
